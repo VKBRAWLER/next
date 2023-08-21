@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 
-const Header = () => {
+const Nav = () => {
   const { data: session } = useSession();
 
   const [providers, setProviders] = useState(null);
@@ -21,13 +21,13 @@ const Header = () => {
   return (
     <nav className='flex-between w-full mb-16 pt-3'>
       <Link href='/' className='flex gap-2 flex-center'>
-      <Image 
-      src='/img/logo.svg'
-      alt='Promtopia logo'
-      width={200} 
-      height={200}
-      className='object-contain animate-spin duration-1000'
-      />
+        <Image
+          src='/assets/images/logo.svg'
+          alt='logo'
+          width={30}
+          height={30}
+          className='object-contain'
+        />
         <p className='logo_text'>Promptopia</p>
       </Link>
 
@@ -136,4 +136,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Nav;
