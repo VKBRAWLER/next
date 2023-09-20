@@ -1,6 +1,9 @@
+"use client";
 import Feed from "@/components/Feed";
+import NoteState from "@/context/noteState";
 
 const Home = () => (
+  <NoteState>
   <section className='w-full flex-center flex-col'>
     <h1 className='head_text text-center'>
       Discover & Share
@@ -14,6 +17,7 @@ const Home = () => (
 
     <Feed />
   </section>
+  </NoteState>
 );
 
 export default Home;

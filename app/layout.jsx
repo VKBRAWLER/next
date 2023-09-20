@@ -1,5 +1,6 @@
+"use client";
 import "@/styles/globals.css";
-
+import NoteState from "@/context/noteState";
 import Nav from "@/components/Nav";
 import Provider from "@/components/Provider";
 
@@ -12,6 +13,7 @@ const RootLayout = ({ children }) => (
   <html lang='en'>
     <body>
       <Provider>
+        <NoteState>
         <div className='main'>
           <div className='gradient' />
         </div>
@@ -20,6 +22,7 @@ const RootLayout = ({ children }) => (
           <Nav />
           {children}
         </main>
+        </NoteState>
       </Provider>
     </body>
   </html>
