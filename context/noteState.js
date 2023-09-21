@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect} from "react";
 import NoteContext from "./noteContext";
 
 const NoteState = (props) => {
@@ -8,13 +8,14 @@ const NoteState = (props) => {
     }
     const [state, setState] = useState(s1);
     const update = () => {
-        setTimeout(() => {
             setState({
                 "name": "larry",
                 "class": "B",
             })
-        }, 5000);
     }
+    useEffect(() => {
+        update();
+      }, []);
     return (
         <NoteContext.Provider value={{state, update}}>
             {props.children}
@@ -22,4 +23,4 @@ const NoteState = (props) => {
     )
 }
 
-export default NoteState;``
+export default NoteState;
